@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Noto+Sans+KR');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  /* font-size: 16px; */
+  font-size: 0.9em;
+  color: #58666e;
+  background-color: #f0f3f4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  .custom-checkbox
+  custom-checkbox 바로 뒤에 위치한 label의 before와 after를 사용해
+  custom-checkbox의 외부 박스와 내부 박스를 생성한다.
+
+  <input class="custom-checkbox" type="checkbox" id="myId">
+  <label for="myId">Content</label>
+*/
+
+.custom-checkbox {
+  display: none;
+}
+
+.custom-checkbox + label {
+  position: absolute; /* 부모 위치를 기준으로 */
+  top: 50%;
+  left: 15px;
+  transform: translate3d(0, -50%, 0);
+  display: inline-block;
+  width: 90%;
+  line-height: 2em;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-checkbox + label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 0);
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #cfdadd;
+}
+
+.custom-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translate3d(0, -50%, 0);
+  width: 10px;
+  height: 10px;
+  background-color: #23b7e5;
+}
